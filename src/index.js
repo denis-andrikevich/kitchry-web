@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import store from './kitchry-core/redux/store';
+import initStore from './kitchry-core/redux/store';
 import CoreRouting from './routing';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -9,6 +9,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.css';
 
 injectTapEventPlugin();
+
+const store = initStore(axios);
 
 const App = () =>(
 	<MuiThemeProvider>

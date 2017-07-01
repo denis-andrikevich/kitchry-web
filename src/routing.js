@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+import PrivateRoute from './components/PrivateRoute/PrivateRouteContainer';
 
 import Home from './layouts/Home/Home';
 import Clients from './layouts/Clients/Clients';
@@ -13,9 +14,9 @@ class CoreRouting extends Component{
 		return(
 			<Router>
 		        <div>
-		        	<Route path="/" component={Home} exact/>
-		        	<Route path="/clients" component={Clients}/>
-		        	<Route path="/login" component={Login}/>
+		        	<PrivateRoute exact  path="/" component={Home}  />
+		        	<PrivateRoute path="/clients" component={Clients} /> 
+		        	<Route path="/login" component={Login} />
 		        </div>
 	    	</Router>
 		)

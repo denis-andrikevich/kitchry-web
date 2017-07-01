@@ -6,7 +6,7 @@ axios.interceptors.request.use(
     config => {
         config.headers = config.headers || {};
         const token = localStorage.getItem('token');
-        config.headers['authorization'] = `Bearer ${token}`;
+        if (token) config.headers['authorization'] = `Bearer ${token}`;
         return config;
     }
 );
@@ -20,5 +20,9 @@ axios.interceptors.response.use(
         return Promise.reject(error);
     }
 );
+
+axios.loginRequest = (data) => {
+    return axios.post()
+}
 
 export default axios;
