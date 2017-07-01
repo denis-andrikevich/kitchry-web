@@ -1,0 +1,3 @@
+[submodule "src/kitchry-core"]
+	path = src/kitchry-core
+	url = https://github.com/denis-andrikevich/kitchry-core.git
