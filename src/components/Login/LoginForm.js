@@ -6,9 +6,9 @@ import validators from '../../helpers/validators';
 import RaisedButton from 'material-ui/RaisedButton';
 
 let LoginForm = props => {
-  const { handleSubmit, inProgress } = props
+  const { handleSubmit } = props;
   const required = validators.required();
-  const email = validators.email('ghunjmkl');
+  const email = validators.email('Is not valid email');
   const style = {
     margin: 12,
   };
@@ -18,17 +18,16 @@ let LoginForm = props => {
       <form onSubmit={handleSubmit}>
         <div>
           <Field
-            name="username"
+            name="userName"
             component={TextField}
-            hintText="Username"
-            validate={required}
+            floatingLabelText="Email"
+            validate={[required, email]}
           />
         </div>
         <div>
           <Field
             name="password"
             component={TextField}
-            hintText="Password"
             floatingLabelText="Password"
             validate={required}
           />

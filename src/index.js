@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
+import axios from 'axios';
 import initStore from './kitchry-core/redux/store';
 import CoreRouting from './routing';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -10,7 +11,7 @@ import './App.css';
 
 injectTapEventPlugin();
 
-const store = initStore(axios);
+const store = initStore(axios, localStorage);
 
 const App = () =>(
 	<MuiThemeProvider>
